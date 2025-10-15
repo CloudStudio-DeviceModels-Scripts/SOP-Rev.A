@@ -227,7 +227,219 @@ function parseUplink(device, payload)
             });
             break;
         
+        case "/PLC5/CF5_Estado":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_Estado");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
            
+        case "/PLC5/Sep1_Horas":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("Sep1_Horas");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
+
+             case "/PLC5/Sep2_Horas":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("Sep2_Horas");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
+
+             case "/PLC5/Sep3_Horas":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("Sep3_Horas");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
+
+             case "/PLC5/Filtro_Horas":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("Filtro_Horas");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
+
+        case "/PLC5/CF5_TIC_SP":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_TIC_SP");
+                try{
+                    etv1.updateTemperatureSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
+
+            case "/PLC5/CF5_TIC_PV":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_TIC_PV");
+                try{
+                    etv1.updateTemperatureSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
+
+
+            case "/PLC5/CF5_Aire_PV":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_Aire_PV");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                    //FT_CF5=ValueData.v.toFixed(2);
+                    //FT_Total_TS=ValueData.ts;
+                }catch{};
+                
+            });
+            break; 
+
+            case "/PLC5/CF5_Aire_SP":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_Aire_SP");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;  
+            
+            case "/PLC5/CF5_Amon_SP":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_Amon_SP");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;  
+
+            case "/PLC5/CF5_Amon_PV":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_Amon_PV");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break; 
+
+            case "/PLC5/CF5_Fos_SP":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_Fosf_SP");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break; 
+
+             case "/PLC5/CF5_Fos_PV":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_Fosf_PV");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
+
+            case "/PLC5/CF5_Mosto_SP":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_Mosto_SP");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
+
+            case "/PLC5/CF5_Mosto_PV":
+            //Obtenemos el array con lecturas de este tag
+            var tagvalues = N3uronData[tag];
+            //Recorremos las lecturas y leemos los valores v, q y ts
+            tagvalues.forEach(valueElement => {
+                var ValueData = ExtractTagData(valueElement);
+                //Listo, actualizamos el endpoint
+                var etv1 = device.endpoints.byAddress("CF5_Mosto_PV");
+                try{
+                    etv1.updateGenericSensorStatus(ValueData.v.toFixed(2), ValueData.ts);
+                }catch{};
+            });
+            break;
         }
    }
 
