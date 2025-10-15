@@ -51,6 +51,40 @@ function getEndpoints(deviceAddress, endpoints)
   var e=endpoints.addEndpoint("Sep3_Vibracion", "Vibracion Separadora 3", endpointType.GenericSensor);
   e.variableTypeId = 1028;
 
+ var e = endpoints.addEndpoint("CF5_Estado", "Estado Cuba 5", endpointType.genericSensor);
+  e.variableTypeId = 1020;
+
+  var e = endpoints.addEndpoint("Sep1_Horas", "Horas Seperadora 1", endpointType.genericSensor);
+  e.variableTypeId = 1008;
+   var e = endpoints.addEndpoint("Sep2_Horas", "Horas Seperadora 2", endpointType.genericSensor);
+  e.variableTypeId = 1008;
+   var e = endpoints.addEndpoint("Sep3_Horas", "Horas Seperadora 3", endpointType.genericSensor);
+  e.variableTypeId = 1008;
+   var e = endpoints.addEndpoint("Filtro_Horas", "Horas Filtro Escoba", endpointType.genericSensor);
+  e.variableTypeId = 1008;
+
+    var e = endpoints.addEndpoint("CF5_Aire_PV", "Caudal de Aire Cuba 5", endpointType.genericSensor);
+  e.variableTypeId = 1013;
+    var e = endpoints.addEndpoint("CF5_Aire_SP", "SP Caudal de Aire Cuba 5", endpointType.genericSensor);
+  e.variableTypeId = 1013;
+  var e = endpoints.addEndpoint("CF5_Amon_SP", "SP Amoniaco Cuba 5", endpointType.genericSensor);
+  e.variableTypeId = 1013;
+    var e = endpoints.addEndpoint("CF5_Amon_PV", "Amoniaco Cuba 5", endpointType.genericSensor);
+  e.variableTypeId = 1013;
+  var e = endpoints.addEndpoint("CF5_Fosf_SP", "SP Fosforico Cuba 5", endpointType.genericSensor);
+  e.variableTypeId = 1013;
+    var e = endpoints.addEndpoint("CF5_Fosf_PV", "Fosforico Cuba 5", endpointType.genericSensor);
+  e.variableTypeId = 1013;
+  var e = endpoints.addEndpoint("CF5_Mosto_SP", "SP Mosto Cuba 5", endpointType.genericSensor);
+  e.variableTypeId = 1013;
+    var e = endpoints.addEndpoint("CF5_Mosto_PV", "Mosto Cuba 5", endpointType.genericSensor);
+  e.variableTypeId = 1013;
+  var e = endpoints.addEndpoint("CF5_TIC_SP", "SP Temperatura Cuba 5", endpointType.temperatureSensor);
+  
+  var e = endpoints.addEndpoint("CF5_TIC_PV", "Temperatura Cuba 5", endpointType.temperatureSensor);
+  
+
+
 
 }
 
@@ -96,6 +130,6 @@ function updateEndpointUIRules(endpoint, rules)
   // - Los endpoints no se pueden eliminar.
   // - El subtipo de endpoint se puede cambiar, pero solo para el segundo endpoint.
   
-   rules.canDelete = false;
+   rules.canDelete = true;
   // rules.canEditSubType = (endpoint.address == "2");
 }
